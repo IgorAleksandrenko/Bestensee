@@ -1,0 +1,17 @@
+# Sollwerte für einschalten FBH im EG
+
+    - name: "tmpl_hzg_ebu_tzi_ein"
+      state: "{{ (states('input_number.hlp_hzg_ebu_tzi_aus') | float) - (states('input_number.hlp_hzg_glo_spreizung') | float) }}"
+      unit_of_measurement: "°C"
+
+    - name: "tmpl_hzg_eku_tzi_ein"
+      state: "{{ (states('input_number.hlp_hzg_eku_tzi_aus') | float) - (states('input_number.hlp_hzg_glo_spreizung') | float) }}"
+      unit_of_measurement: "°C"
+
+    - name: "tmpl_hzg_ewo_tzi_ein"
+      state: "{{ (states('input_number.hlp_hzg_ewo_tzi_aus') | float) - (states('input_number.hlp_hzg_glo_spreizung') | float) }}"
+      unit_of_measurement: "°C"
+        
+    - name: "tmpl_hzg_ewc_tzi_ein"
+      state: "{{ (states('input_number.hlp_hzg_ewc_tzi_aus') | float) - (states('input_number.hlp_hzg_glo_spreizung') | float) }}"
+      unit_of_measurement: "°C"
