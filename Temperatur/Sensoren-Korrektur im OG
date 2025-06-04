@@ -1,0 +1,16 @@
+# Zimmer-Temperatur-Korrekturen-Sensoren im OG
+    - name: "tmpl_hzg_oki_tmp"
+      state: "{{ (states('sensor.h5075_7523_temperature') | float) + (states('input_number.hlp_hzg_oki_krtr') | float) }}"
+      unit_of_measurement: "°C"
+
+#      - name: "tmpl_hzg_oku_tmp"
+#        state: "{{ (states('sensor.dev_esp_4_Temperature') | float) + (states('input_number.hlp_hzg_oku_krtr') | float) }}"
+#        unit_of_measurement: "°C"
+
+#      - name: "tmpl_hzg_osl_tmp"
+#        state: "{{ (states('sensor.dev_esp_testNeu3_ESP_3_Temperature') | float) + (states('input_number.hlp_hzg_osl_krtr') | float) }}"
+#        unit_of_measurement: "°C"
+
+    - name: "tmpl_hzg_owc_tmp"
+      state: "{{ (states('sensor.h5075_2282_temperature') | float) + (states('input_number.hlp_hzg_owc_krtr') | float) }}"
+      unit_of_measurement: "°C"
