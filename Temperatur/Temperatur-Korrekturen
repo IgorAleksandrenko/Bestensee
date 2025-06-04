@@ -1,0 +1,17 @@
+# Zimmer-Temperatur-Korrekturen-Sensoren im EG
+#  - sensor:
+    - name: "tmpl_hzg_ebu_tmp"
+      state: "{{ (states('sensor.dev_esp_testneu1_test_temperature') | float) + (states('input_number.hlp_hzg_ebu_krtr') | float) }}"       
+      unit_of_measurement: "°C"
+
+    - name: "tmpl_hzg_eku_tmp"
+      state: "{{ (states('sensor.dev_esp_4_Temperature') | float) + (states('input_number.hlp_hzg_eku_krtr') | float) }}"
+      unit_of_measurement: "°C"
+
+    - name: "tmpl_hzg_ewo_tmp"
+      state: "{{ (states('sensor.dev_esp_testNeu3_ESP_3_Temperature') | float) + (states('input_number.hlp_hzg_ewo_krtr') | float) }}"
+      unit_of_measurement: "°C"
+
+    - name: "tmpl_hzg_ewc_tmp"
+      state: "{{ (states('sensor.dev_esp_mini_5_temperature') | float) + (states('input_number.hlp_hzg_ewc_krtr') | float) }}"
+      unit_of_measurement: "°C"
